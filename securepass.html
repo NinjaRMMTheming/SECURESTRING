@@ -5,20 +5,29 @@
 <title>Untitled Document</title>
 	<link rel="stylesheet" href="style.css">
 	<script>
-	
-function CopyToClipboard(id)
-{
-var r = document.createRange();
-r.selectNode(document.getElementById(id));
-window.getSelection().removeAllRanges();
-window.getSelection().addRange(r);
-document.execCommand('copy');
-window.getSelection().removeAllRanges();
-}
-	
-	
-	
-	</script>
+function copyClipboard() {
+  var elm = document.getElementById("code");
+  // for Internet Explorer
+
+  if(document.body.createTextRange) {
+    var range = document.body.createTextRange();
+    range.moveToElementText(elm);
+    range.select();
+    document.execCommand("Copy");
+    
+  }
+  else if(window.getSelection) {
+    // other browsers
+
+    var selection = window.getSelection();
+    var range = document.createRange();
+    range.selectNodeContents(elm);
+    selection.removeAllRanges();
+    selection.addRange(range);
+    document.execCommand("Copy");
+    
+  }
+}	</script>
 </head>
 
 <body class="body">
@@ -86,7 +95,7 @@ window.getSelection().removeAllRanges();
 }
 				</code>
 			</pre>
-		<button class="codebutton" type="button" onclick="CopyToClipboard(code)">Copy CodeBlock</button>
+		<button class="codebutton" type="button" onclick="copyClipboard()">Copy CodeBlock</button>
 		</div>
 		<div class="table-cell">
 			<span class="paragraph">

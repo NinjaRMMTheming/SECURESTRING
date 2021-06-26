@@ -138,3 +138,93 @@ code.codeblock{
 	bottom: 0;
 	position: relative;
 }
+
+/*
+.codebutton:hover{
+	animation: colors 3s infinite normal;
+}
+*/
+
+.codebutton:focus{
+	animation: copycodescale 1s normal, colors 1s normal;
+}
+
+
+::selection{
+  color: inherit;
+  background: #0000;
+}
+
+
+
+::-moz-selection {
+  color: inherit;
+  background: #0000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes copycodescale{
+	
+	0%{
+		transform: scale(1);
+	}
+	50%{
+		transform: scale(1.5);
+	}
+	100%{
+		transform: scale(1);
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+@keyframes colors{
+	
+	0%{
+		box-shadow: 0px 0px 0px 1px #008AFF;
+	}
+	33%{
+		
+		box-shadow: 0px 0px 0px 1px #F03;
+		
+	}
+	66%{
+		box-shadow: 0px 0px 0px 1px #8600FF;
+		
+	}
+	90%{
+		box-shadow: 0px 0px 0px 1px #2000FF;
+		 
+	}
+	100%{
+		box-shadow: 0px 0px 0px 1px #008AFF;
+	}
+	
+
+	
+}
+
+
+
+
+
+
+
+
