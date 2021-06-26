@@ -11,7 +11,7 @@
 		<h1 class="heading">
 		A Better Implementation of Secure-String for Powershell Modules
 		</h1>
-  <img class="img" src="../../Pictures/TabCompletion/final.png"><br />
+  <img class="img" src="./images/final.png"><br />
 		<div class="table-cell">
 			<span class="paragraph">
 			To get a better understanding of the code above, lets take a deep dive into road that let here...
@@ -32,13 +32,13 @@
 				{TAB} TO ACTIVATE AND {ENTER} TO LEAVE THE ARGUMENTCOMPLETOR.
 			</span>
 		</div>
-  <img class="img" src="../../Pictures/TabCompletion/nofakebound.png"><br />
+  <img class="img" src="./images/nofakebound.png"><br />
 		<div class="table-cell">
 			<span class="paragraph">
 			If we test the function above, and try to use tab completion, the end result will be this...
 			</span>
 		</div>
-  <img class="img" src="../../Pictures/TabCompletion/result1.png"><br />
+  <img class="img" src="./images/result1.png"><br />
 		<div class="table-cell">
 			<span class="paragraph">
 			The reason is because if you look closely at this line of the code
@@ -50,31 +50,31 @@
 				we can see that the parameter itself is being passed into the argument. This is wrong because the parameter itself does not have a value contained until AFTER the module has started running. So what actually needs to happen is we need to make use of what is known as <span class="variable">$fakeBoundParameters</span>. These are initialized inside of the argument container and can hold a value as the argument is executed. So, with this new bound, lets try the code again and see what the result is...
 			</span>
 	    </div>
-	<img class="img" src="../../Pictures/TabCompletion/passphrasenoreturn.png"><br />
+	<img class="img" src="./images/passphrasenoreturn.png"><br />
 	<div class="table-cell">
 			<span class="paragraph">
 			We can see that the tab completion now works, but the result returned is the same...
 			</span>
 		</div>
-	<img class="img" src="../../Pictures/TabCompletion/result1.png"><br />
+	<img class="img" src="./images/result1.png"><br />
 	<div class="table-cell">
 			<span class="paragraph">
 			This is because we need to have a statement return to the console, like so...
 			</span>
 		</div>
-	<img class="img" src="../../Pictures/TabCompletion/passphrasewithreturn.png"><br />
+	<img class="img" src="./images/passphrasewithreturn.png"><br />
 	<div class="table-cell">
 			<span class="paragraph">
 			But, if we run this, our returned result for <span class="variable">$PassPhrase</span> is...
 			</span>
 		</div>
-	<img class="img" src="../../Pictures/TabCompletion/result2.png"><br />
+	<img class="img" src="./images/result2.png"><br />
 	<div class="table-cell">
 			<span class="paragraph">
 			This is because whatever value is returned to the console, becomes the value for our given variable <span class="variable">$PassPhrase</span>. So, all we need to do is give it another variable to contain the result in as pass THAT as the returnable value instead, like so...
 			</span>
 		</div>
-	<img class="img" src="../../Pictures/TabCompletion/somearbitraryvar.png"><br />
+	<img class="img" src="./images/somearbitraryvar.png"><br />
 	<div class="table-cell">
 			<span class="paragraph">
 			That didn't seem to work, it just came back with a <span class="variable">$Null</span> result... but why? 
@@ -91,7 +91,7 @@
 				Lets watch!
 			</span>
 		</div>
-	<img class="img" src="../../Pictures/TabCompletion/securestringasterisksshowing.png"><br />
+	<img class="img" src="./images/securestringasterisksshowing.png"><br />
 	<div class="table-cell">
 			<span class="paragraph">
 			That worked! We can see in the codeblock that we passed both variables to return after running the module, but something weird happened to the console as the value returned to the console. As you can see we returned the
@@ -102,7 +102,7 @@
 			Lets watch!
 			</span>
 		</div>
-	<img class="img" src="../../Pictures/TabCompletion/securestringresultmath.png"><br />
+	<img class="img" src="./images/securestringresultmath.png"><br />
 	<div class="table-cell">
 			<span class="paragraph">
 			We can see that the really long securestring that we passed, returns a value that has now removed all the left over asterisks. To break this down into a simple calculation, I momentarily decrypted the securestring to be able to get the length of it in totalbytes, then divided in half, then multipled it by the - [hyphen/subtract] symbol. Once I contained it in a <span class="variable">$count</span> variable, I returned the value using whats called a sub-expression operator <span class="variable">$()</span>. Simple definition is that this operator will calculate anything within it, then pass it back as a variable. Its extremely useful for calculations, scriptblocks and much more.<br />
@@ -115,7 +115,7 @@
 				<span class="function">Test-Function</span> <span class="paramater">-PassPhrase</span> <span class="value">'test123'</span>
 			</span>
 		</div>
-<img class="img" src="../../Pictures/TabCompletion/ranasplaintext.png"><br />
+<img class="img" src="./images/ranasplaintext.png"><br />
 	<div class="table-cell">
 			<span class="paragraph">
 			From what we can see here, the value of <span class="variable">$PassPhrase</span> returned, but <span class="variable">$Script:</span><span class="property">PassPhrase</span> did not, it returned a <span class="variable">$Null</span> result. This is because instead of using tab completion, we specified a plain-text value, thus, the tab completion never containing a value. This isnt necessary a big deal if youre using argumentcompletors that dont require securestrings or need security or something of the like. But if security is a must, then we must put a stop in place so the script cannot execute without there being a secure-string value.
@@ -123,19 +123,19 @@
 			We need to create an if statement to produce this effect. But first, we need to take the value returned to the console and place that into a variable itself so we have something to compare in the if statement. Then, we will return that value, but also add it as the default <span class="variable">$PassPhrase</span> value. This is to ensure that if the end user types a plain-text value, it will replace the default of our secure-string returned value, thus triggering the if statement. Incase its the first time that is ran, we will also add an -or statement with it as the elevated variable may not have a value yet.
 			</span>
 		</div>
-	<img class="img" src="../../Pictures/TabCompletion/testingifwarning.png"><br />
+	<img class="img" src="./images/testingifwarning.png"><br />
 	<div class="table-cell">
 			<span class="paragraph">
 			From the execution, we can see that a plan-text value AND a secure-string value were passed, but our warning still executed and broke the script, even though <span class="variable">$PassPhrase</span> and <span class="variable">$Script:</span><span class="property">PassPhrase</span> should have matched. So what happened? Well, without going into too much boring detail, I went into a rabbithole of testing and learned that there are certain limitations to this method of secure-string passing. One of them being that certain characters that are passed to the console have an impact on the overall result. Both variables should match (I even used the -match operator) as they are constructed the same way. They are both strings and all, but what I learned is that they return differently. Heres an example of the hyphen symbol returned to the console and exceuted in the function.
 			</span>
 		</div>
-	<img class="img" src="../../Pictures/TabCompletion/resultsarediff.png"><br />
+	<img class="img" src="./images/resultsarediff.png"><br />
 	<div class="table-cell">
 			<span class="paragraph">
 			As you can see <span class="variable">$PassPhrase</span> returns no outside quotes but <span class="variable">$Script:</span><span class="property">ReturnableValue</span> does. My best guess on this is that <span class="variable">$PassPhrase</span> executes the additional quotes as part of the executed code, while <span class="variable">$Script:</span><span class="property">ReturnableValue</span> executes the additional quotes as part of the returned value. Even though they are both string values, they have different operating commands. So whats the solution? Remove the additional quotes on the outside of the value, down to single (double) quotes.
 			</span>
 		</div>
-	<img class="img" src="../../Pictures/TabCompletion/executesproperly.png"><br />
+	<img class="img" src="./images/executesproperly.png"><br />
 	<div class="table-cell">
 			<span class="paragraph">
 			We can see that it executes properly now, but if you look closely, you can see that in
@@ -145,7 +145,7 @@
 			----SECURE-PASSWORD---- has the same color as the -PassPhrase parameter itself. I thought this was odd so I did some testing with other symbols and oddly enough I was not surprised with the results.
 			</span>
 		</div>
-	<img class="img" src="../../Pictures/TabCompletion/othersymbols.png"><br />
+	<img class="img" src="./images/othersymbols.png"><br />
 	<div class="table-cell">
 			<span class="paragraph">
 			So what is happening here? Well, it spelled out clearly in the errors themselves. Some symbols are being passed back to the variable as quantifiers (definers), instead of as strings. So, with this in mind, we now understand that only certain characters are safe to use for our if statement becasue they define as part of the string and not as part of actual code. (~ and -).<br />
@@ -163,7 +163,7 @@
 			Let's Test this!
 			</span>
 		</div>
-<img class="img" src="../../Pictures/TabCompletion/final.png"><br />
+<img class="img" src="./images/final.png"><br />
 	<div class="table-cell">
 			<span class="paragraph">
 			And there we have it!
