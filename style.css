@@ -1,0 +1,99 @@
+body.body{
+
+background-color: #111;
+
+}
+
+h1.heading{
+	text-transform: uppercase;
+	font-family: courier;
+	text-align: center;
+	color: #fff;
+	font-weight: 100;
+}
+
+
+.table-cell-main{
+	border-radius: 3.5px;
+	box-shadow: -5px 5px 15px 1px #000;
+	width: 65%;
+	margin: 0 auto;
+	height: fit-content;
+	padding: 5%;
+	display: block;
+}
+.table-cell{
+	border-radius: 3.5px;
+	box-shadow: inset 0px 0px 0px 1px #333,-5px 5px 15px 1px #000;
+	padding: 5%;
+	background-color: #111;
+	margin-bottom: 3%;
+	display: flex;
+}
+
+span.paragraph{
+	font-size: 19px;
+	color: #999;
+	font-family: courier
+}
+.paragraph.somecode{
+	
+	margin: 0 auto;
+}
+
+.function{
+	color: #ff3;
+}
+
+
+.img{
+	width: 100%;
+	height: auto;
+	border-radius: 3.5px;
+	box-shadow: -5px 5px 15px 1px #000;
+	margin-bottom: 3%;
+	
+}
+
+
+
+.value{
+	color: #00DBFF;
+}
+
+.parameter{
+	color: #333333;
+}
+
+
+.forums{
+	color: #fff;
+}
+
+.highlight{
+	color: #006CFF;
+}
+
+
+a.reference{
+	text-decoration: none;
+	color: #196B7C;
+}
+
+
+.conditional{
+	color: #f03;
+}
+
+.netclass{
+	color: #0063FD;
+}
+
+.variable{
+	color: #02FF00;
+}
+
+
+.property{
+	color: #fff;
+}
