@@ -17,7 +17,7 @@ h1.heading{
 .table-cell-main{
 	border-radius: 3.5px;
 	box-shadow: -5px 5px 15px 1px #000;
-	width: 65%;
+	width: 75%;
 	margin: 0 auto;
 	height: fit-content;
 	padding: 5%;
@@ -49,7 +49,7 @@ span.paragraph{
 
 .img{
 	display: block;
-	width: 75%;
+	width: 100%;
 	height: auto;
 	border-radius: 3.5px;
 	box-shadow: 0px 0px 0px 1px #333, -5px 5px 15px 1px #000;
@@ -100,4 +100,41 @@ a.reference{
 
 .property{
 	color: #fff;
+}
+
+pre{
+	width: 100%;
+}
+
+code.codeblock{
+	color: #999;
+	width: 100%;
+	font-size: 19px;
+}
+
+.string{
+	color: #FFA400
+}
+
+.mtk55{
+	color: #02B6E6
+}
+.mtk57{
+	color: #00E3FF
+}
+
+.codebutton{
+	height: fit-content;
+	min-width: fit-content;
+	background-color: #111;
+	border: none;
+	box-shadow: 0px 0px 0px 1px #333, -5px 5px 5px 1px #000;
+	color: #999;
+	font-family: courier;
+	font-weight: 100;
+	border-radius: 50px;
+	font-size: 19px;
+	padding: .3% .3%;
+	bottom: 0;
+	position: relative;
 }
