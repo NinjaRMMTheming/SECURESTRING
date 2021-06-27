@@ -148,7 +148,7 @@ p.codeblock{
 }
 */
 
-.codebutton:focus{
+.codebutton:focus, .codebutton:active{
 	animation: copycodescale 1s normal, colors 1s normal;
 }
 
