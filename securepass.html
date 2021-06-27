@@ -7,6 +7,8 @@
 	<script>
 function copyClipboard() {
   var elm = document.getElementById("code");
+  
+
   // for Internet Explorer
 
   if(document.body.createTextRange) {
@@ -36,7 +38,7 @@ function copyClipboard() {
 		A Better Implementation of SecureString Passwords for Powershell Modules
 		</h1>
 	<div class="table-cell">
-		<button class="codebutton" type="button" onclick="copyClipboard()">Copy CodeBlock</button>
+		<button class="codebutton" id="codebtn" type="button" onclick="copyClipboard()"><span class="copy">Copy CodeBlock</span></button>
 			<pre>
 			<code>
 			<p class="codeblock" id="code">

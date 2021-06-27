@@ -140,6 +140,7 @@ p.codeblock{
 	font-size: 19px;
 	padding: .3% .3%;
 	position: aobsolute;
+	z-index: 2;
 }
 
 /*
@@ -148,10 +149,13 @@ p.codeblock{
 }
 */
 
-.codebutton:focus, .codebutton:active{
-	animation: copycodescale 1s normal, colors 1s normal;
+.codebutton:active{
+	animation: copycodescale 350ms normal, colors 150ms normal;
 }
-
+.codebutton .copy{
+	pointer-events: none;
+	z-index: 1;
+}
 
 ::selection{
   color: inherit;
@@ -183,7 +187,7 @@ p.codeblock{
 		transform: scale(1);
 	}
 	50%{
-		transform: scale(1.5);
+		transform: scale(1.1);
 	}
 	100%{
 		transform: scale(1);
