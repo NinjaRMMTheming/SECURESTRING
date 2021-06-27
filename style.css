@@ -112,6 +112,7 @@ p.codeblock{
 	color: #999;
 	width: 100%;
 	font-size: 19px;
+	padding-top: 1%;
 /*	overflow-x: scroll;*/
 	
 }
@@ -159,14 +160,14 @@ p.codeblock{
 
 ::selection{
   color: inherit;
-  background: #0000;
+  background: rgba(44,44,44,0.49);
 }
 
 
 
 ::-moz-selection {
   color: inherit;
-  background: #0000;
+  background: rgba(44,44,44,0.49);
 }
 
 
