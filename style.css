@@ -104,12 +104,16 @@ a.reference{
 
 pre{
 	width: 100%;
+	margin-left: -9%;
+	overflow-x: scroll;
 }
 
-code.codeblock{
+p.codeblock{
 	color: #999;
 	width: 100%;
 	font-size: 19px;
+/*	overflow-x: scroll;*/
+	
 }
 
 .string{
@@ -135,8 +139,7 @@ code.codeblock{
 	border-radius: 50px;
 	font-size: 19px;
 	padding: .3% .3%;
-	bottom: 0;
-	position: relative;
+	position: aobsolute;
 }
 
 /*
@@ -163,13 +166,14 @@ code.codeblock{
 }
 
 
+p.codeblock{
+	-webkit-overflow-scrolling: touch;
+}
 
 
-
-
-
-
-
+::-webkit-scrollbar{
+	display: none;
+}
 
 
 
