@@ -1,6 +1,7 @@
 body.body{
 
 background-color: #111;
+padding-top: 1%;
 
 }
 
@@ -17,7 +18,7 @@ h1.heading{
 .table-cell-main{
 	border-radius: 3.5px;
 	box-shadow: -5px 5px 15px 1px #000;
-	width: 90%;
+	width: 95%;
 	margin: 0 auto;
 	height: fit-content;
 	padding: 1%;
