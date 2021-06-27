@@ -17,10 +17,10 @@ h1.heading{
 .table-cell-main{
 	border-radius: 3.5px;
 	box-shadow: -5px 5px 15px 1px #000;
-	width: 75%;
+	width: 90%;
 	margin: 0 auto;
 	height: fit-content;
-	padding: 5%;
+	padding: 1%;
 	display: block;
 }
 .table-cell{
